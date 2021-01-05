@@ -5,7 +5,7 @@ import App from './App';
 import Todo from './Todo/Todo';
 import CurrencyConvertor from './CurrencyConvertor/CurrencyConvertor';
 import reportWebVitals from './reportWebVitals';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 const routing = (
   <Router>
