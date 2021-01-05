@@ -2,12 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Todo from './Todo/Todo';
+import CurrencyConvertor from './CurrencyConvertor/CurrencyConvertor';
 import reportWebVitals from './reportWebVitals';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+
+const routing = (
+  <Router>
+    <div>
+      <Route path="/app" component={App} />
+      <Route path="/todo" component={Todo} />
+      <Route path="/currency-convertor" component={CurrencyConvertor} />
+    </div>
+  </Router>
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 

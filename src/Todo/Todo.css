@@ -1,0 +1,8 @@
+.completed_task {
+    text-decoration: line-through;
+    color: light-grey !important;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
