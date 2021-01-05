@@ -9,24 +9,26 @@ class todo extends Component {
 
     render() {
         return (
-            <div className="col-6 m-auto p-4">
+            <div className="col-md-8 col-xl-6  col-sm-12 m-auto p-4">
                 <input type="text" className="form-control mb-2" placeholder="New Task" onChange={event => this.inputChangeListener(event)} />
-                <button className="btn btn-sm btn-secondary" onClick={this.addTaskHandler.bind(this)}>Add Task</button>
+                <button className="btn btn-sm btn-warning" onClick={this.addTaskHandler.bind(this)}>Add Task</button>
                 <hr />
-                { this.state.inputValue.map((item, index) => <li key={index}><span className={item.isCompleted ? 'completed_task' : ''}>{item.value}</span>
+
+                { this.state.inputValue.map((item, index) => <div className="card p-2 mb-2"><li key={index}><span className={item.isCompleted ? 'completed_task' : ''}>{item.value}</span>
                     <small className="text-primary m-4 c-pointer" onClick={this.markAsCompleted.bind(this, index)}>{item.isCompleted ? 'Mark as Uncompleted' : 'Mark as Completed'}</small>
                     <small className="text-danger m-4 c-pointer" onClick={this.deleteTaskHandler.bind(this, index)}>Delete</small>
-                </li>)}
+                </li></div>)}
             </div>
         );
     }
 
     addTaskHandler() {
-        if (!this.valueExist(this.state.currentValue)) {
+        if (!this.valueExist(this.state.currentValue) && this.state.currentValue) {
             const data1 = this.state.inputValue;
             const data2 = [{ value: this.state.currentValue, isCompleted: false }];
             Array.prototype.push.apply(data1, data2);
-            this.setState({ inputValue: data1 });
+            const data = [...data1.filter(x => x.isCompleted), ...data1.filter(x => !x.isCompleted)];
+            this.setState({ inputValue: data });
         }
         console.log(this.state, this.state.inputValue);
     }
@@ -47,9 +49,10 @@ class todo extends Component {
     }
 
     markAsCompleted(idx) {
-        const toDos = this.state.inputValue;
+        let toDos = this.state.inputValue;
         toDos[idx].isCompleted = !toDos[idx].isCompleted;
-        this.setState({ inputValue: toDos })
+        toDos = [...this.state.inputValue.filter(x => !x.isCompleted), ...this.state.inputValue.filter(x => x.isCompleted)];
+        this.setState({ inputValue: toDos });
     }
 }
 
