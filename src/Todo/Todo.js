@@ -2,35 +2,66 @@ import React, { Component } from 'react';
 import './Todo.css';
 
 class todo extends Component {
+    defaultInputClass = ['form-control mb-2', 'border-danger shake-input form-control mb-2'];
+    _input = React.createRef();
     state = ({
         inputValue: [],
-        currentValue: ''
-    })
+        currentValue: '',
+        inputClasses: this.defaultInputClass[0]
+    });
+
 
     render() {
+        console.log("Render");
         return (
             <div className="col-md-8 col-xl-6  col-sm-12 m-auto p-4">
-                <input type="text" className="form-control mb-2" placeholder="New Task" onChange={event => this.inputChangeListener(event)} />
-                <button className="btn btn-sm btn-warning" onClick={this.addTaskHandler.bind(this)}>Add Task</button>
+                <h1 className="mb-3 display-5"> ⚛️ Todo Application</h1>
+                <input type="text" className={this.state.inputClasses} placeholder="New Task" onChange={event => this.inputChangeListener(event)} required={true} onKeyPress={this.enterKeyHandler.bind(this)} autoFocus={true} value={this.state.currentValue} ref={c => (this._input = c)}/>
+                <button className="btn btn-sm btn-warning" onClick={this.addTaskHandler.bind(this)} type="submit">Add Task</button>
                 <hr />
 
-                { this.state.inputValue.map((item, index) => <div className="card p-2 mb-2"><li key={index}><span className={item.isCompleted ? 'completed_task' : ''}>{item.value}</span>
-                    <small className="text-primary m-4 c-pointer" onClick={this.markAsCompleted.bind(this, index)}>{item.isCompleted ? 'Mark as Uncompleted' : 'Mark as Completed'}</small>
-                    <small className="text-danger m-4 c-pointer" onClick={this.deleteTaskHandler.bind(this, index)}>Delete</small>
-                </li></div>)}
+                {
+                    this.state.inputValue.map((item, index) =>
+                        <div className="p-2 mb-2 col-12 border row m-0" key={item.idx}>
+                            <div className="col-10 p-0">
+                            <input type="checkbox" class="form-check-input m-1" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} checked={item.isCompleted} />
+                            <label className={item.isCompleted ? 'completed_task form-check-label' : 'form-check-label'} for={item.idx}>{item.value}</label>
+                            </div>
+                            <div className="col-1">
+                                <i className="bi bi-trash text-danger c-pointer p-4" onClick={this.deleteTaskHandler.bind(this, index)}></i>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         );
     }
 
     addTaskHandler() {
+        this.setState({ inputClasses: this.state.currentValue === '' ? this.defaultInputClass[1] : this.defaultInputClass[0] });
+
+        // [Hack]: Unable to find programmatically re-render method
+        setTimeout(() => {
+            this.setState({ inputClasses: this.defaultInputClass[0] });
+        }, 1500);
+
         if (!this.valueExist(this.state.currentValue) && this.state.currentValue) {
-            const data1 = this.state.inputValue;
-            const data2 = [{ value: this.state.currentValue, isCompleted: false }];
-            Array.prototype.push.apply(data1, data2);
-            const data = [...data1.filter(x => x.isCompleted), ...data1.filter(x => !x.isCompleted)];
+            const originalState = this.state.inputValue;
+            const newStateItem = [{ value: this.state.currentValue, isCompleted: false, idx: this.state.inputValue ? this.state.inputValue.length + 1 : 0 }];
+            Array.prototype.push.apply(originalState, newStateItem);
+            const data = [...originalState.filter(x => x.isCompleted), ...originalState.filter(x => !x.isCompleted)];
             this.setState({ inputValue: data });
         }
         console.log(this.state, this.state.inputValue);
+        this.setState({ currentValue: '' });
+        this._input.focus();
+    }
+
+    enterKeyHandler(event) {
+        console.log('Enter key pressed');
+        if (event && event.key === 'Enter') {
+            this.addTaskHandler();
+        }
     }
 
     valueExist(value) {
