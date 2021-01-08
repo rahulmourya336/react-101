@@ -16,19 +16,19 @@ class todo extends Component {
         return (
             <div className="col-md-8 col-xl-6  col-sm-12 m-auto p-4">
                 <h1 className="mb-3 display-5"> ⚛️ Todo Application</h1>
-                <input type="text" className={this.state.inputClasses} placeholder="New Task" onChange={event => this.inputChangeListener(event)} required={true} onKeyPress={this.enterKeyHandler.bind(this)} autoFocus={true} value={this.state.currentValue} ref={c => (this._input = c)}/>
+                <input type="text" className={this.state.inputClasses} placeholder="New Task" onChange={event => this.inputChangeListener(event)} required={true} onKeyPress={this.enterKeyHandler.bind(this)} autoFocus={true} value={this.state.currentValue} ref={c => (this._input = c)} />
                 <button className="btn btn-sm btn-warning" onClick={this.addTaskHandler.bind(this)} type="submit">Add Task</button>
                 <hr />
 
                 {
                     this.state.inputValue.map((item, index) =>
-                        <div className="p-2 mb-2 col-12 border row m-0" key={item.idx}>
-                            <div className="col-10 p-0">
-                            <input type="checkbox" class="form-check-input m-1" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} checked={item.isCompleted} />
-                            <label className={item.isCompleted ? 'completed_task form-check-label' : 'form-check-label'} for={item.idx}>{item.value}</label>
+                        <div className="p-2 mb-2 col-12 border row m-0 shadow-sm rounded" key={item.idx}>
+                            <div className="col-11 p-0 text-break ">
+                                <input type="checkbox" class="form-check-input m-1 center-width" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} checked={item.isCompleted} />
+                                <label className={item.isCompleted ? 'completed_task form-check-label w-94' : 'form-check-label w-94'} for={item.idx}>{item.value}</label>
                             </div>
                             <div className="col-1">
-                                <i className="bi bi-trash text-danger c-pointer p-4" onClick={this.deleteTaskHandler.bind(this, index)}></i>
+                                <i className="bi bi-trash text-danger c-pointer" onClick={this.deleteTaskHandler.bind(this, index)}></i>
                             </div>
                         </div>
                     )
