@@ -24,7 +24,7 @@ class todo extends Component {
                     this.state.inputValue.map((item, index) =>
                         <div className="p-2 mb-2 col-12 border row m-0 shadow-sm rounded" key={item.idx}>
                             <div className="col-11 p-0 text-break ">
-                                <input type="checkbox" class="form-check-input m-1 center-width" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} checked={item.isCompleted} />
+                                <input type="checkbox" className="form-check-input m-1 center-width" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} checked={item.isCompleted} />
                                 <label className={item.isCompleted ? 'completed_task form-check-label w-94' : 'form-check-label w-94'} for={item.idx}>{item.value}</label>
                             </div>
                             <div className="col-1">

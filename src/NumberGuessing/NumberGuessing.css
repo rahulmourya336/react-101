@@ -1,0 +1,29 @@
+button:active,
+button:hover {
+  outline: 0;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.icon-spin {
+  animation-name: spin;
+  animation-duration: 200ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transition: all;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.badge {
+  white-space: break-spaces;
+}
