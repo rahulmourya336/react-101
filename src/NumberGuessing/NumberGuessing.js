@@ -50,14 +50,6 @@ class NumberGuessing extends Component {
             )
         }
 
-        const ShowHint = () => {
-            return (
-                <>
-                    {this.state.previouslyGuessedNumbers.length > 0 && this.state.showGameHint ? <span>{(this.state.guessedNumber > this.state.actualNumber) ? "Guess was high, try low..." : "Guess was low, try higher..."}</span> : null}
-                </>
-            )
-        }
-
         const GameOver = () => {
             return (
                 <>
@@ -83,7 +75,6 @@ class NumberGuessing extends Component {
                             <input type="number" className="form-control" placeholder="44" onKeyPress={this.enterKeyHandler.bind(this)} onChange={event => this.inputChangeListener(event)} required={true} ref={c => (this._input = c)} autoFocus={true} max={4} value={this.state.guessedNumber} />
                             <button className="btn btn-primary" onClick={this.updateGuessedNumberHandler.bind(this)}>Wild Guess</button>
                         </div>
-                        {/* <ShowHint /> */}
                         {
                             this.state.previouslyGuessedNumbers.map((item, index) =>
                                 <React.Fragment key={index}>
