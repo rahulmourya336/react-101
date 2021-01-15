@@ -19,7 +19,7 @@ const GAME_LEVEL = [
 class NumberGuessing extends Component {
     _input = React.createRef();
     praiseList = ['Exceptional', 'Remarkable', 'Fascinating', 'Terrific', 'Phenomenal'];
-    praiseEmojiList = ['🎉', '🥳', '🎊', '⚡', '🏆'];
+    praiseEmojiList = ['⚡', '🥳', '🎊', '🎉', '🏆'];
     constructor(props) {
         super(props);
         this.state = {
@@ -30,7 +30,6 @@ class NumberGuessing extends Component {
             previouslyGuessedNumbers: [],
             actualNumber: undefined,
             isGameOver: false,
-            showGameHint: false
         };
         console.log("Component Init");
     }
@@ -69,11 +68,11 @@ class NumberGuessing extends Component {
             return (
                 <>
                     <div className="row m-0">
-                        <div className="col-6 bg-warning p-2">Current Level: <span className="badge bg-primary">{this.state?.level?.name}</span> </div>
-                        <div className="col-6 text-end bg-warning p-2">Score: <span className="badge bg-secondary">{this.state.score}</span></div>
+                        <div className="col-6 bg-yellowish p-2">Current Level: <span className="badge bg-primary">{this.state?.level?.name}</span> </div>
+                        <div className="col-6 text-end bg-yellowish p-2">Score: <span className="badge bg-secondary">{this.state.score}</span></div>
                         <div className="input-group mb-3 mt-3 ml-3 mr-4">
-                            <input type="number" className="form-control" placeholder="44" onKeyPress={this.enterKeyHandler.bind(this)} onChange={event => this.inputChangeListener(event)} required={true} ref={c => (this._input = c)} autoFocus={true} max={4} value={this.state.guessedNumber} />
-                            <button className="btn btn-primary" onClick={this.updateGuessedNumberHandler.bind(this)}>Wild Guess</button>
+                            <input type="number" className="form-control form-control-lg" placeholder="44" onKeyPress={this.enterKeyHandler.bind(this)} onChange={event => this.inputChangeListener(event)} required={true} ref={c => (this._input = c)} autoFocus={true} max={4} value={this.state.guessedNumber} />
+                            <button className="btn btn-outline-primary mt-3 w-100 rounded-start" onClick={this.updateGuessedNumberHandler.bind(this)}>Wild Guess</button>
                         </div>
                         {
                             this.state.previouslyGuessedNumbers.map((item, index) =>
@@ -94,9 +93,7 @@ class NumberGuessing extends Component {
         return (
             <div className="number-guessing container" >
                 <h1 className="p-2 text-center display-3">Number guessing game</h1>
-                {/* Level selection */}
-                <div className="card" >
-                    {/* <GameOver /> */}
+                <div className={this.state.isGameOver ? 'card color-change-effect' : 'card'} >
                     {this.state.isGameOver ? <GameOver /> : (this.state.level ? <PlayGame /> : <LevelSelection />)}
                 </div >
             </div >
@@ -121,7 +118,6 @@ class NumberGuessing extends Component {
     }
 
     updateGuessedNumberHandler() {
-        this.setState({ showGameHint: false });
         if (!this.valueExist(this.state.guessedNumber) && this.state.guessedNumber) {
             if (this.state.actualNumber === +this.state.guessedNumber) {
                 const currentScore = this.state.score;

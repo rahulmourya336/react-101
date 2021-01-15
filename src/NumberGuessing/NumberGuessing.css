@@ -16,14 +16,31 @@ button:hover {
 }
 
 @keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .badge {
   white-space: break-spaces;
+}
+
+.bg-yellowish {
+  background-color: #ffdbab;
+}
+
+.color-change-effect {
+  animation: change-color 2s alternate-reverse infinite;
+}
+
+@keyframes change-color {
+  0% {
+    background-color: hsl(300, 100%, 25%, 0.3);
+  }
+  100% {
+    background-color: hsl(240, 100%, 50%, 0.2);
+  }
 }
