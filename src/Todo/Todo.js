@@ -99,6 +99,7 @@ class todo extends Component {
         todoList[idx]['classes'] = this.defaultTodoInputClasses[1];
         const valueToEdit = this.state.inputValue[idx]['value'];
         this.setState({ valueUpdateAtIndex: idx, currentValue: valueToEdit || '', inputValue: todoList });
+        this._input.focus();
     }
 
     inputChangeListener(event) {
