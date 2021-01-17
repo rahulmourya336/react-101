@@ -26,12 +26,14 @@ class todo extends Component {
                     this.state.inputValue.map((item, index) =>
                         <div className={item.classes} key={item.idx}>
                             <div className="col-10 p-0 text-break ">
-                                <input type="checkbox" className="form-check-input m-1 center-width" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} onChange={e => {}} checked={item.isCompleted} />
+                                <input type="checkbox" className="form-check-input m-1 center-width" id={item.idx} onClick={this.markAsCompleted.bind(this, index)} onChange={e => { }} checked={item.isCompleted} />
                                 <label className={item.isCompleted ? 'completed_task form-check-label w-94' : 'form-check-label w-94'} htmlFor={item.idx}>{item.value}</label>
                             </div>
-                            <div className="col-2 m-0 p-0 text-center">
+                            <div className="col-1 m-0 p-0 text-center">
                                 <i className={this.state.valueUpdateAtIndex !== undefined ? "bi bi-pencil-fill text-info c-pointer no-pointer-event" : "bi bi-pencil-fill text-info c-pointer "} onClick={this.editTaskHandler.bind(this, index)} ></i>
-                                <i className="bi bi-trash text-danger c-pointer p-4" onClick={this.deleteTaskHandler.bind(this, index)}></i>
+                            </div>
+                            <div className="col-1 m-0 p-0 text-center">
+                                <i className="bi bi-trash text-danger c-pointer ml-4" onClick={this.deleteTaskHandler.bind(this, index)}></i>
                             </div>
                         </div>
                     )
@@ -55,7 +57,7 @@ class todo extends Component {
             originalState[this.state.valueUpdateAtIndex]['classes'] = this.defaultTodoInputClasses[0];
             console.log(this.state);
             // originalState.splice(this.state.valueUpdateAtIndex, 1, updatedValue);
-            this.setState({ valueUpdateAtIndex: undefined,  })
+            this.setState({ valueUpdateAtIndex: undefined, })
         } else {
             if (!this.valueExist(this.state.currentValue) && this.state.currentValue) {
                 const originalState = this.state.inputValue;
@@ -96,7 +98,7 @@ class todo extends Component {
         const todoList = this.state.inputValue;
         todoList[idx]['classes'] = this.defaultTodoInputClasses[1];
         const valueToEdit = this.state.inputValue[idx]['value'];
-        this.setState({ valueUpdateAtIndex: idx, currentValue: valueToEdit || '', inputValue: todoList});
+        this.setState({ valueUpdateAtIndex: idx, currentValue: valueToEdit || '', inputValue: todoList });
     }
 
     inputChangeListener(event) {
