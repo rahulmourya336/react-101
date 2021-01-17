@@ -19,7 +19,7 @@ class todo extends Component {
             <div className="col-md-8 col-xl-6  col-sm-12 m-auto p-4">
                 <h1 className="mb-3 display-5"> ⚛️ Todo Application</h1>
                 <input type="text" className={this.state.inputClasses} placeholder="New Task" onChange={event => this.inputChangeListener(event)} required={true} onKeyPress={this.enterKeyHandler.bind(this)} autoFocus={true} value={this.state.currentValue} ref={c => (this._input = c)} />
-                <button className="btn btn-sm btn-warning" onClick={this.addTaskHandler.bind(this)} type="submit">{this.state.valueUpdateAtIndex !== undefined ? 'Update Task' : 'Add Task'}</button>
+                <button className={this.state.valueUpdateAtIndex !== undefined ? "btn btn-sm bg-warning w-100" : "btn btn-sm bg-purple w-100 text-light"} onClick={this.addTaskHandler.bind(this)} type="submit">{this.state.valueUpdateAtIndex !== undefined ? 'Update Task' : 'Add Task'}</button>
                 <hr />
 
                 {
@@ -30,7 +30,7 @@ class todo extends Component {
                                 <label className={item.isCompleted ? 'completed_task form-check-label w-94' : 'form-check-label w-94'} htmlFor={item.idx}>{item.value}</label>
                             </div>
                             <div className="col-1 m-0 p-0 text-center">
-                                <i className={this.state.valueUpdateAtIndex !== undefined ? "bi bi-pencil-fill text-info c-pointer no-pointer-event" : "bi bi-pencil-fill text-info c-pointer "} onClick={this.editTaskHandler.bind(this, index)} ></i>
+                                <i className={this.state.valueUpdateAtIndex !== undefined ? "bi bi-pencil-fill text-info c-pointer no-pointer-event text-muted" : "bi bi-pencil-fill text-info c-pointer text-muted"} onClick={this.editTaskHandler.bind(this, index)} ></i>
                             </div>
                             <div className="col-1 m-0 p-0 text-center">
                                 <i className="bi bi-trash text-danger c-pointer ml-4" onClick={this.deleteTaskHandler.bind(this, index)}></i>

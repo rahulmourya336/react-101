@@ -34,6 +34,10 @@
   }
 }
 
-.no-pointer-event{
+.no-pointer-event {
   pointer-events: none;
+}
+
+.bg-purple {
+  background-color: #886ce4;
 }
