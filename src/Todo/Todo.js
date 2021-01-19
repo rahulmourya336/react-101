@@ -50,9 +50,9 @@ class todo extends Component {
             this.setState({ inputClasses: this.defaultInputClass[0] });
         }, 1500);
 
+        const originalState = this.state.inputValue;
         if (this.state.valueUpdateAtIndex !== undefined) {
 
-            const originalState = this.state.inputValue;
             originalState[this.state.valueUpdateAtIndex]['value'] = this.state.currentValue;
             originalState[this.state.valueUpdateAtIndex]['classes'] = this.defaultTodoInputClasses[0];
             console.log(this.state);
@@ -60,7 +60,6 @@ class todo extends Component {
             this.setState({ valueUpdateAtIndex: undefined, })
         } else {
             if (!this.valueExist(this.state.currentValue) && this.state.currentValue) {
-                const originalState = this.state.inputValue;
                 const newStateItem = [{ value: this.state.currentValue, isCompleted: false, idx: this.state.inputValue ? this.state.inputValue.length + 1 : 0, classes: this.defaultTodoInputClasses[0] }];
                 Array.prototype.push.apply(originalState, newStateItem);
                 const data = [...originalState.filter(x => x.isCompleted), ...originalState.filter(x => !x.isCompleted)];
