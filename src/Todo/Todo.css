@@ -18,3 +18,36 @@
 .bg-purple {
   background-color: #886ce4;
 }
+
+.todo-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-icon {
+  position: absolute;
+  right: 10px;
+  font-size: small;
+}
+
+.remove-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: small;
+}
+
+.card-width {
+  width: 46%;
+  min-height: 70px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e8ba75 !important;
+}
+
+@media only screen and (max-width: 700px) {
+  .card-width {
+    width: 100%;
+  }
+}
