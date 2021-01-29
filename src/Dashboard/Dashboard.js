@@ -17,7 +17,7 @@ function Dashboard() {
             <div className="card-row">
                 {
                     projects.filter(project => project.showProject).map((project) =>
-                        <div className="card" key={project.idx}>
+                        <div className="card" key={project.idx} onClick={(event) => gotoProject(project.routerLink)}>
                             {project.previewLink ? <img src={project.previewLink} className="card-img-top p-2" alt={project.name + ' preview'} /> : <span className="no-preview-available">No Preview Available</span>}
                             <div className="card-body">
                                 <h5 className="card-title">{project.name || ''}</h5>

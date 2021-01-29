@@ -31,6 +31,7 @@ h1 span a {
 .dashboard .card {
   width: 19.5rem;
   margin: 20px 35px 20px 0;
+  cursor: pointer;
 }
 
 .card-img-top {
