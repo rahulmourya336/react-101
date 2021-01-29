@@ -3,23 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Todo from './Todo/Todo';
-// import Dashboard from './Dashboard/Dashboard';
+import Dashboard from './Dashboard/Dashboard';
 // import NotFound from './NotFound/NotFound';
 import NumberGuessing from './NumberGuessing/NumberGuessing';
 import CurrencyConvertor from './CurrencyConvertor/CurrencyConvertor';
+import CheckoutPage from './CheckoutPage/CheckoutPage';
+
 import reportWebVitals from './reportWebVitals';
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 const routing = (
   <Router>
-    <div>
-      {/* <Route path="/" component={Dashboard} /> */}
-      <Route exact path="/app" component={App} />
-      <Route exact path="/todo" component={Todo} />
-      <Route exact path="/currency-convertor" component={CurrencyConvertor} />
-      <Route exact path="/number-guessing" component={NumberGuessing} />
+    <Switch>
+      <Route exact path="/" component={Dashboard} />
+      <Route path="/app" component={App} />
+      <Route path="/todo" component={Todo} />
+      <Route path="/currency-convertor" component={CurrencyConvertor} />
+      <Route path="/number-guessing" component={NumberGuessing} />
+      <Route path="/checkout-page" component={CheckoutPage} />
       {/* <Route path="*" component={NotFound} /> */}
-    </div>
+    </Switch>
   </Router>
 )
 

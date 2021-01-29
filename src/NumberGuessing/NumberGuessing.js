@@ -92,7 +92,7 @@ class NumberGuessing extends Component {
 
         return (
             <div className="number-guessing container" >
-                <h1 className="p-2 text-center display-3">Number guessing game</h1>
+                <h1 className="p-2 text-center display-3 pb-4">Number guessing game</h1>
                 <div className={this.state.isGameOver ? 'card color-change-effect' : 'card'} >
                     {this.state.isGameOver ? <GameOver /> : (this.state.level ? <PlayGame /> : <LevelSelection />)}
                 </div >
