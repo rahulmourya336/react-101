@@ -1,0 +1,14 @@
+.InputComponent > input {
+    padding: 8px 8px 8px 40px;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid #828282;
+    width: 80%;
+}
+
+.InputComponent > .material-icons {
+    position: relative;
+    top: 5px;
+    right: -35px;
+    color: #828282;
+}
