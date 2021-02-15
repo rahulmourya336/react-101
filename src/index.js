@@ -8,6 +8,7 @@ import Dashboard from './Dashboard/Dashboard';
 import NumberGuessing from './NumberGuessing/NumberGuessing';
 import CurrencyConvertor from './CurrencyConvertor/CurrencyConvertor';
 import CheckoutPage from './CheckoutPage/CheckoutPage';
+import QuotesGenerator from './QuotesGenerator/QuotesGenerator';
 
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
@@ -21,6 +22,7 @@ const routing = (
       <Route path="/currency-convertor" component={CurrencyConvertor} />
       <Route path="/number-guessing" component={NumberGuessing} />
       <Route path="/checkout-page" component={CheckoutPage} />
+      <Route path="/quotes-generator" component={QuotesGenerator} />
       {/* <Route path="*" component={NotFound} /> */}
     </Switch>
   </Router>

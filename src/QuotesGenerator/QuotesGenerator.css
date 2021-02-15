@@ -1,0 +1,15 @@
+blockquote {
+    color: #fff;
+    text-shadow: 7px 1px 30px rgba(150, 150, 156, 1);
+    z-index: 2;
+    font-size: 2rem;
+    width: 90%;
+    margin-left: 20px;
+    font-family: 'Lora', serif;
+}
+
+@media only screen and (max-width: 600px)  {
+    blockquote {
+        font-size: 1em;
+    }
+}

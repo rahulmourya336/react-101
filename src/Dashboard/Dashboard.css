@@ -11,7 +11,7 @@ h1 {
 }
 
 .hero-text {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #767676;
   font-size: 32px;
   padding: 0 0 15px 0;
 }
@@ -22,10 +22,11 @@ h1 span a {
 
 .no-preview-available {
   width: 100%;
-  padding: 40px;
   text-align: center;
   color: lightgrey;
-  min-height: 130px;
+  min-height: 180px;
+  padding: 75px;
+  border-bottom: 1px solid;
 }
 
 .dashboard .card {
@@ -36,6 +37,7 @@ h1 span a {
 
 .card-img-top {
   border-bottom: 1px solid lightgrey;
+  min-height: 180px;
 }
 
 .round-btn {

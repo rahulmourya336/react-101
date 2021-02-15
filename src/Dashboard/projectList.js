@@ -19,6 +19,14 @@ const PROJECT_LIST = [
         showProject: true,
         idx: 2
     },
+    {
+        name: 'Random Quotes Generator',
+        previewLink: '',
+        takeaways: ['Life cycle hooks', 'CSS'],
+        routerLink: '/quotes-generator',
+        showProject: true,
+        idx: 3
+    },
 
 ];
 
