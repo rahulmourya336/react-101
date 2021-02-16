@@ -27,12 +27,15 @@ class QuotesGenerator extends Component {
                     <div className="position-relative mt-4">
                         <div id="quoteImage">
                             <img src={this.state.imageURL} alt="quotes image" aria-hidden className="img-thumbnail" />
-                            <blockquote className="position-absolute top-50-local">{this.state.quote.text} - <cite>{this.state.quote.author || 'Anonymus'}</cite></blockquote>
+                            <blockquote className="position-absolute top-50-local" contentEditable="true">{this.state.quote.text} - <cite>{this.state.quote.author || 'Anonymus'}</cite></blockquote>
                         </div>
                         <button className="btn btn-warning text-light position-absolute bottom-0 end-0 download-btn btn-sm" onClick={this.downloadAsImage.bind(this, 'quoteImage')}><span className="material-icons">
                             file_download
                         </span></button>
                     </div>
+                    <div className="mt-2"><span className="text-black-50 small p-1 "><span><span className="material-icons align-bottom mr-2">
+                        info
+                        </span>Tap on quote to edit</span></span></div>
                     <div className="bg-yellowish bottom-0 footer m-1 p-2 position-absolute small start-50 text-black-50 text-center translate-middle-x footer">Built with Keyboard by <a href="https://twitter.com/rahucrux" className="text-decoration-none">Rahul Mourya</a></div>
                 </div>
             </>
