@@ -11,11 +11,11 @@ class QuotesGenerator extends Component {
             title: '',
             author: ''
         },
-        loading: false
+        loading: true
     };
     render() {
         const Loader = () => <div className="loader">
-            <div className="loading position-absolute top-50 start-50">
+            <div className="loading position-absolute top-50-local start-50-local">
                 <span className="position-absolute p-5">Downloading...</span>
                 <div></div>
                 <div></div>
