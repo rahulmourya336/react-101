@@ -27,9 +27,9 @@ class QuotesGenerator extends Component {
                     <div className="position-relative mt-4">
                         <div id="quoteImage">
                             <img src={this.state.imageURL} alt="quotes image" aria-hidden className="img-thumbnail" />
-                            <blockquote className="position-absolute top-50">{this.state.quote.text} - <cite>{this.state.quote.author || 'Anonymus'}</cite></blockquote>
+                            <blockquote className="position-absolute top-50-local">{this.state.quote.text} - <cite>{this.state.quote.author || 'Anonymus'}</cite></blockquote>
                         </div>
-                        <button className="btn btn-warning text-light position-absolute bottom-0 end-0" onClick={this.downloadAsImage.bind(this, 'quoteImage')}><span className="material-icons">
+                        <button className="btn btn-warning text-light position-absolute bottom-0 end-0 download-btn btn-sm" onClick={this.downloadAsImage.bind(this, 'quoteImage')}><span className="material-icons">
                             file_download
                         </span></button>
                     </div>

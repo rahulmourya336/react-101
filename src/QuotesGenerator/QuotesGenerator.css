@@ -13,9 +13,19 @@ blockquote {
   text-align: center;
 }
 
+.top-50-local {
+  top: 50% !important;
+}
+
+.download-btn {
+  z-index: 5;
+}
+
 @media only screen and (max-width: 600px) {
   blockquote {
-    font-size: 1em;
+    font-size: 0.8em;
+    top: 30% !important;
+    font-size: small;
   }
 
   h1 {
@@ -40,4 +50,7 @@ blockquote {
     width: 65%;
   }
 
+  .top-50-local {
+    top: 35% !important;
+  }
 }
