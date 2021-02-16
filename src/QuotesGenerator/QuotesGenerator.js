@@ -11,7 +11,7 @@ class QuotesGenerator extends Component {
             title: '',
             author: ''
         },
-        loading: true
+        loading: false
     };
     render() {
         const Loader = () => <div className="loader">
@@ -37,7 +37,7 @@ class QuotesGenerator extends Component {
                     </div>
                     <div className="position-relative mt-4">
                         <div id="quoteImage">
-                            <img src={this.state.imageURL} alt="quotes image" aria-hidden className="img-thumbnail" />
+                            <img src={this.state.imageURL} alt="quotes image" aria-hidden className="img-thumbnail shadow-lg"/>
                             <blockquote className="position-absolute top-50-local" contentEditable="true" suppressContentEditableWarning={true}>{this.state.quote.text} - <cite>{this.state.quote.author || 'Anonymus'}</cite></blockquote>
                         </div>
                         <button className="btn btn-primary text-light position-absolute bottom-0 end-0 download-btn btn-sm" onClick={this.downloadAsImage.bind(this, 'quoteImage')}><span className="material-icons">
