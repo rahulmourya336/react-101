@@ -1,5 +1,6 @@
-import todoImagePreview from '../assets/todo-preview.png'
-import numberGuessingGamePreview from '../assets/number-guessing-game-preview.png'
+import todoImagePreview from '../assets/todo-preview.png';
+import numberGuessingGamePreview from '../assets/number-guessing-game-preview.png';
+import quotesGeneratorPreview from '../assets/quotes-generator-preview.png';
 
 const PROJECT_LIST = [
     {
@@ -21,7 +22,7 @@ const PROJECT_LIST = [
     },
     {
         name: 'Random Quotes Generator',
-        previewLink: '',
+        previewLink: quotesGeneratorPreview,
         takeaways: ['Life cycle hooks', 'CSS'],
         routerLink: '/quotes-generator',
         showProject: true,

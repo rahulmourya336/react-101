@@ -1,15 +1,34 @@
 blockquote {
-    color: #fff;
-    text-shadow: 7px 1px 30px rgba(150, 150, 156, 1);
-    z-index: 2;
-    font-size: 2rem;
-    width: 90%;
-    margin-left: 20px;
-    font-family: 'Lora', serif;
+  color: #fff;
+  text-shadow: 7px 1px 30px rgba(150, 150, 156, 1);
+  z-index: 2;
+  font-size: 2rem;
+  width: 90%;
+  margin-left: 20px;
+  font-family: 'Lora', serif;
+  font-weight: 600;
 }
 
-@media only screen and (max-width: 600px)  {
-    blockquote {
-        font-size: 1em;
-    }
+@media only screen and (max-width: 600px) {
+  blockquote {
+    font-size: 1em;
+  }
+
+  h1 {
+    display: block;
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  .rs-fix {
+    flex: auto;
+    text-align: center;
+    padding: 5px 20px;
+  }
+
+  .rs-fix + div {
+    text-align: center !important;
+    padding: 10px 0 0 0;
+  }
 }

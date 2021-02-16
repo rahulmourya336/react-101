@@ -23,7 +23,7 @@ function Dashboard() {
                                 <h5 className="card-title">{project.name || ''}</h5>
                                 <p className="card-text">Takeaways: <mark>{project.takeaways.join(', ')}</mark></p>
                                 {/* <button className="btn btn-primary" >View Project</button> */}
-                                <div className="round-btn" onClick={(event) => gotoProject(project.routerLink)}><span class="material-icons">
+                                <div className="round-btn" onClick={(event) => gotoProject(project.routerLink)}><span className="material-icons">
                                     arrow_forward
                             </span></div>
                             </div>

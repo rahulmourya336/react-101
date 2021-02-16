@@ -17,19 +17,19 @@ class QuotesGenerator extends Component {
             <>
                 <div className="container p-4">
                     <div className="row">
-                        <div className="col">
+                        <div className="col rs-fix">
                             <h1>Quotes Generator</h1>
                         </div>
                         <div className="col text-end">
-                            <button className="btn btn-primary text-right align-self-center" onClick={this.init.bind(this)}>Random Quote</button>
+                            <button className="btn btn-outline-primary text-right align-self-center" onClick={this.init.bind(this)}>Motivate Me</button>
                         </div>
                     </div>
                     <div className="position-relative mt-4">
                         <div id="quoteImage">
-                            <img src={this.state.imageURL} alt="quotes image"  aria-hidden className="img-thumbnail" />
+                            <img src={this.state.imageURL} alt="quotes image" aria-hidden className="img-thumbnail" />
                             <blockquote className="position-absolute top-50">{this.state.quote.text} - <cite>{this.state.quote.author || 'Anonymus'}</cite></blockquote>
                         </div>
-                        <button className="btn btn-primary position-absolute bottom-0 end-0" onClick={this.downloadAsImage.bind(this, 'quoteImage')}><span className="material-icons">
+                        <button className="btn btn-warning text-light position-absolute bottom-0 end-0" onClick={this.downloadAsImage.bind(this, 'quoteImage')}><span className="material-icons">
                             file_download
                         </span></button>
                     </div>
@@ -48,7 +48,7 @@ class QuotesGenerator extends Component {
     }
 
     downloadAsImage(div) {
-        html2canvas(document.getElementById(div), {useCORS: true, letterRendering: 1, allowTaint : true}).then(function (canvas) {
+        html2canvas(document.getElementById(div), { useCORS: true, letterRendering: 1, allowTaint: true }).then(function (canvas) {
             document.body.appendChild(canvas);
             var a = document.createElement('a');
             a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
