@@ -33,7 +33,7 @@ class QuotesGenerator extends Component {
                             file_download
                         </span></button>
                     </div>
-                    <div className="bg-yellowish bottom-0 m-3 p-2 position-absolute start-50 translate-middle-x text-black-50">Built with Keyboard by <a href="https://twitter.com/rahucrux" className="text-decoration-none">Rahul Mourya</a></div>
+                    <div className="bg-yellowish bottom-0 footer m-1 p-2 position-absolute small start-50 text-black-50 text-center translate-middle-x footer">Built with Keyboard by <a href="https://twitter.com/rahucrux" className="text-decoration-none">Rahul Mourya</a></div>
                 </div>
             </>
         );
