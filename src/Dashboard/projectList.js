@@ -23,8 +23,8 @@ const PROJECT_LIST = [
     {
         name: 'Random Quotes Generator',
         previewLink: quotesGeneratorPreview,
-        takeaways: ['Life cycle hooks', 'CSS'],
-        routerLink: '/quotes-generator',
+        takeaways: ['Life cycle hooks', 'CSS', 'Canvas'],
+        routerLink: 'https://react-random-quote-app.vercel.app/',
         showProject: true,
         idx: 3
     },

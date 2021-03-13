@@ -9,7 +9,11 @@ function Dashboard() {
     const history_ = useHistory();
     const projects = PROJECT_LIST;
 
-    const gotoProject = (routerLink) => history_.push(routerLink);
+    const gotoProject = (routerLink) => {
+        if (routerLink.startsWith("http")) {
+            window.location.assign(routerLink);
+        } else { history_.push(routerLink); }
+    }
 
     return (
         <div className="dashboard">
