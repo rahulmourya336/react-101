@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Refer `package.json` for more info.
 
-[Screenshot](https://i.ibb.co/ZVWcZzq/image.png)
+![Screenshot](https://i.ibb.co/ZVWcZzq/image.png)
 
 ### Built with
 ---
