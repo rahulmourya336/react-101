@@ -18,7 +18,7 @@ function Dashboard() {
     return (
         <div className="dashboard">
             <h1 className="hero-text">⚛️ 100 days of react | <span><a href="https://twitter.com/rahucrux">Rahul Mourya</a></span></h1>
-            <div className="card-row">
+            <div className="card-row mt-10">
                 {
                     projects.filter(project => project.showProject).map((project) =>
                         <div className="card" key={project.idx} onClick={(event) => gotoProject(project.routerLink)}>

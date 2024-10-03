@@ -4,7 +4,7 @@ h1 {
 }
 
 .dashboard {
-  width: 75%;
+  width: 75dvw;
   margin: 20px auto;
   padding: 10px;
   outline: 0;
@@ -30,14 +30,15 @@ h1 span a {
 }
 
 .dashboard .card {
+  height: 21rem;
   width: 19.5rem;
-  margin: 20px 35px 20px 0;
   cursor: pointer;
 }
 
 .card-img-top {
   border-bottom: 1px solid lightgrey;
   min-height: 180px;
+  object-fit: contain;
 }
 
 .round-btn {
@@ -70,9 +71,15 @@ h1 span a {
 .card-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: min(max(40px, 4vw), 60px);
 }
 
-@media screen and (max-width: 566px) {
+.mt-10 {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 666px) {
   .dashboard {
     width: 95%;
   }
