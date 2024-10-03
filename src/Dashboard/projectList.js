@@ -13,7 +13,8 @@ const PROJECT_LIST = [
         takeaways: ['Form Hooks', 'Validation',],
         routerLink: 'https://fm-mortgage-repayment-calc.vercel.app/',
         showProject: true,
-        idx: 6
+        idx: 6,
+        projectURL: "https://github.com/rahulmourya336/fm-mortgage-repayment-calc",
     },
     {
         name: 'Advice Generator',
@@ -21,7 +22,8 @@ const PROJECT_LIST = [
         takeaways: ['Functional Component', 'API',],
         routerLink: 'https://fm-advice-generator-mocha.vercel.app/',
         showProject: true,
-        idx: 5
+        idx: 5,
+        projectURL: "https://github.com/rahulmourya336/fm-advice-generator",
     },
     {
         name: 'Contact Form',
@@ -29,7 +31,8 @@ const PROJECT_LIST = [
         takeaways: ['Form Hooks', 'validation',],
         routerLink: 'https://fm-contact-form-jade.vercel.app/',
         showProject: true,
-        idx: 4
+        idx: 4,
+        projectURL: "https://github.com/rahulmourya336/fm-contact-form",
     },
     {
         name: 'Todo Application',
@@ -54,7 +57,8 @@ const PROJECT_LIST = [
         takeaways: ['Life cycle hooks', 'CSS', 'Canvas'],
         routerLink: 'https://react-random-quote.vercel.app/',
         showProject: true,
-        idx: 3
+        idx: 3,
+        projectURL: "https://github.com/rahulmourya336/react-random-quote-generator",
     },
 
 ];

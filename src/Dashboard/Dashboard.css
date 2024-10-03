@@ -79,6 +79,29 @@ h1 span a {
   margin-top: 20px;
 }
 
+.mr-2 {
+  margin-right: 8px;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+mark {
+  font-size: 0.9em;
+  border-radius: 5px;
+  color: burlywood;
+  margin-right: 5px;
+}
+
+.text-link {
+  text-decoration: none;
+  line-height: 0;
+}
+
 @media screen and (max-width: 666px) {
   .dashboard {
     width: 95%;
