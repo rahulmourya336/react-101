@@ -29,7 +29,7 @@ function Dashboard() {
                                 {/* <button className="btn btn-primary" >View Project</button> */}
                                 <div className="round-btn" onClick={(event) => gotoProject(project.routerLink)}><span className="material-icons">
                                     arrow_forward
-                            </span></div>
+                                </span></div>
                             </div>
                         </div>
                     )
