@@ -29,10 +29,7 @@ function Dashboard() {
         {projects
           .filter((project) => project.showProject)
           .map((project) => (
-            <div
-              className="card"
-              key={project.idx}
-            >
+            <div className="card" key={project.idx}>
               {project.previewLink ? (
                 <img
                   src={project.previewLink}
@@ -41,14 +38,22 @@ function Dashboard() {
                   onClick={(event) => gotoProject(project.routerLink)}
                 />
               ) : (
-                <span className="no-preview-available" onClick={(event) => gotoProject(project.routerLink)}>
+                <span
+                  className="no-preview-available"
+                  onClick={(event) => gotoProject(project.routerLink)}
+                >
                   No Preview Available
                 </span>
               )}
               <div className="card-body">
-                <h5 className="card-title" onClick={(event) => gotoProject(project.routerLink)}>{project.name || ""}</h5>
+                <h5
+                  className="card-title"
+                  onClick={(event) => gotoProject(project.routerLink)}
+                >
+                  {project.name || ""}
+                </h5>
                 <p className="card-text">
-                  Takeaways:{" "}
+                  <span className="text-sm"> Takeaways: </span>
                   {project.takeaways.map((takeaway, _idx) => (
                     <mark key={_idx}>{takeaway}</mark>
                   ))}
@@ -56,7 +61,11 @@ function Dashboard() {
                 {/* <button className="btn btn-primary" >View Project</button> */}
                 {project.projectURL && (
                   <p className="project-link">
-                    <a href={project.projectURL} className="text-link" target="_blank">
+                    <a
+                      href={project.projectURL}
+                      className="text-link"
+                      target="_blank"
+                    >
                       <img
                         src={GithubIcon}
                         alt="Github icon"

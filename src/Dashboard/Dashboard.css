@@ -90,8 +90,12 @@ h1 span a {
   cursor: pointer;
 }
 
+.text-sm {
+  font-size: 0.6;
+}
+
 mark {
-  font-size: 0.9em;
+  font-size: 0.8em;
   border-radius: 5px;
   color: burlywood;
   margin-right: 5px;
